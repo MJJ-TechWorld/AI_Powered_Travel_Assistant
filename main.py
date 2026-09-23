@@ -14,7 +14,7 @@ html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
 
 [data-testid="stAppViewContainer"] {
     background: 
-        linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.94) 45%, rgba(240,245,255,0.97) 100%),
+        linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.94) 50%, rgba(240,245,255,0.82) 100%),
         url("https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=80&auto=format&fit=crop") no-repeat center top;
     background-size: cover;
     background-attachment: fixed;
@@ -25,7 +25,7 @@ html, body, [class*="css"] { font-family: 'Outfit', sans-serif; }
     top: 0; left: 0; right: 0; bottom: 0;
     background: url("https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=1920&q=60&auto=format&fit=crop") no-repeat center;
     background-size: cover;
-    opacity: 0.06;
+    opacity: 0.12;
     pointer-events: none;
     z-index: 0;
 }
@@ -333,7 +333,7 @@ RULES: NEVER suggest {final_avoid}, Food MUST be strictly {food_preferences}, Co
                 model="gemini-3.5-flash-lite",
                 input=prompt
             )
-            itinerary_text = str(interaction)
+            itinerary_text = interaction.output_text
         except Exception as e:
             itinerary_text = f"API Key not found in .env or error: {e}\n\nFallback Plan for {destination or 'Trip'} - {trip_duration} Days - {overall_age_group} - {food_preferences} - Avoid {final_avoid} - Budget {budget} - Best hotels, places, restaurants will be planned once API key is set in .env file."
 
@@ -357,7 +357,7 @@ RULES: NEVER suggest {final_avoid}, Food MUST be strictly {food_preferences}, Co
 
 st.markdown("""
 <div class="footer-pro">
-    <div class="footer-title">Travel Planner</div>
+    <div class="footer-title">Travel Assistant</div>
     <div class="footer-sub">Crafted For Explorers, Designed By MJJ-TechWorld</div>
     <div class="footer-sub">Your Data Is Safe & Private • Secure, Encrypted & Trusted By Sanket Dodya Sir</div>
     <div class="footer-copy">© 2026 Travel Planner. All Rights Reserved. | Terms Of Service | Privacy Policy | Cookie Policy | Disclaimer<br>Designed & Developed By MJJ-TechWorld • Made In India • Support: support@mjjtechworld.com • Version 2.0</div>
