@@ -1,8 +1,8 @@
 import streamlit as st
+from google import genai
 from datetime import date, timedelta
 from dotenv import load_dotenv
 load_dotenv()
-from google import genai
 client = genai.Client()
 
 st.set_page_config(page_title="AI Powered Travel Assistant", page_icon="✈️", layout="wide", initial_sidebar_state="collapsed")
